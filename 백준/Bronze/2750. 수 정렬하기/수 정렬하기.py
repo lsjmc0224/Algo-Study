@@ -1,7 +1,10 @@
-x = int(input())
-num_list = []
-for i in range(x):
-    num_list.append(int(input()))
-num_list1 = sorted(num_list)
-for i in range(len(num_list)):
-    print(num_list1[i])
+N = int(input())
+lst = [int(input()) for _ in range(N)]
+
+for i in range(0, N-1):
+    for j in range(i+1, N):
+        if lst[i] > lst[j]:
+            lst[i], lst[j] = lst[j], lst[i]
+
+for i in lst:
+    print(i)
