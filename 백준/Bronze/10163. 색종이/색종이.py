@@ -10,19 +10,8 @@ for n in range(1, N+1):
 
     for i in range(si, si+h):
         for j in range(sj, sj+w):
-            #arr[i][j] = n
-            arr[i][sj:sj+w] = [n]*w
+            arr[i][j] = n
 
-# 여기서 빈도수 배열을 만들어서 세는 게 현 코드보다 시간이 더 짧게 걸림
-# cnts=[]
-
-#1
-# cnts = [0]*(N+1)
-# for i in range(1001):
-#     for j in range(1001):
-#         cnts[arr[i][j]] += 1
-
-#2
 for n in range(1, N+1):
     cnt = 0
     for lst in arr:
