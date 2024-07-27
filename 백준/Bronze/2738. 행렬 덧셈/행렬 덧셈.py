@@ -1,16 +1,13 @@
-n, m = map(int, input().split())
-arr_1 = []
-arr_2 = []
+N, M = map(int, input().split())
+arr_a = [list(map(int, input().split())) for _ in range(N)]
+arr_b = [list(map(int, input().split())) for _ in range(N)]
+arr_n = [[0]*M for _ in range(N)]
 
-for _ in range(n):
-    a = list(map(int, input().split()))
-    arr_1.append(a)
+for i in range(N):
+    for j in range(M):
+        arr_n[i][j] = arr_a[i][j] + arr_b[i][j]
 
-for _ in range(n):
-    b = list(map(int, input().split()))
-    arr_2.append(b)
-
-for i in range(n):
-    for j in range(m):
-        print(arr_1[i][j] + arr_2[i][j], end=" ")
+for lst in arr_n:
+    for n in lst:
+        print(n, end=" ")
     print()
