@@ -1,12 +1,11 @@
-n, m = map(int, input().split())
-arr = []
+N, M = map(int, input().split())
+lst = [0]*N
+for i in range(N):
+    lst[i] = i+1
 
-for i in range(1, n+1):
-    arr.append(i)
+for _ in range(M):
+    i, j = map(int, input().split())
+    lst[i-1], lst[j-1] = lst[j-1], lst[i-1]
 
-for j in range(m):
-    x, y = map(int, input().split())
-    arr[x-1], arr[y-1] = arr[y-1], arr[x-1]
-
-result = " ".join([str(_) for _ in arr])
-print(result)
+for n in lst:
+    print(n, end=" ")
