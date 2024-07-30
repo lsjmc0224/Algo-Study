@@ -17,17 +17,17 @@ for tc in range(T):
     cab = [[0]*M for _ in range(N)]
     cnt = 0
     for _ in range(K):
-        # s가 가로에, e가 세로에 속함 / [e][s]로 탐색해야 함
+        # s가 가로에, e가 세로에 속함 / [e][s]로 배열에 넣어주기
         s, e = map(int, input().split())
         cab[e][s] = 1
-    # 이중 for문을 통해 전체 탐색한 뒤, not visited / cab = 1 케이스
 
     v = [[0]*M for _ in range(N)]
 
+    # 이중 for문을 통해 전체 탐색한 뒤, not visited / cab = 1 케이스
     for i in range(N):
         for j in range(M):
             if cab[i][j] == 1 and v[i][j] == 0:
+                # 위 조건 만족 시에만 dfs 호출
                 dfs(i, j)
                 cnt += 1
-
     print(cnt)
