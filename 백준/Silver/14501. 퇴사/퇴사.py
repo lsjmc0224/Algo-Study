@@ -5,6 +5,9 @@
 
 def dfs(n, sm):
     global ans
+    
+    if n > N:
+        return
 
     if n == N:  # 퇴사일까지 n이 증가하면 종료
         ans = max(ans, sm)
