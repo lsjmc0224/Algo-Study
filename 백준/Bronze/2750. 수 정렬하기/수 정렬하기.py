@@ -1,10 +1,20 @@
 N = int(input())
-lst = [int(input()) for _ in range(N)]
+q_lst = [int(input()) for _ in range(N)]
 
-for i in range(0, N-1):
-    for j in range(i+1, N):
-        if lst[i] > lst[j]:
-            lst[i], lst[j] = lst[j], lst[i]
+def quickSort(lst):
+    if len(lst) <= 1:
+        return lst  # 그냥 끝내는 게 아니라 정렬한 lst를 보내주는 종료 조건
 
-for i in lst:
-    print(i)
+    left = []
+    right = []
+    pivot = lst.pop(0)
+
+    for n in lst:
+        if pivot > n:
+            left.append(n)
+        else:
+            right.append(n)
+    return quickSort(left) + [pivot] + quickSort(right)
+
+ans = quickSort(q_lst)
+print(*ans, sep='\n')
